@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Docker Automation test]" parallel="tests">
+  <test name="chrome test(failed)" parallel="tests">
+    <classes>
+      <class name="AWSDocker.ChromeBrowserDockerDemo">
+        <methods>
+          <include name="firstTest"/>
+        </methods>
+      </class> <!-- AWSDocker.ChromeBrowserDockerDemo -->
+    </classes>
+  </test> <!-- chrome test(failed) -->
+</suite> <!-- Failed suite [Docker Automation test] -->
