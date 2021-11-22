@@ -30,6 +30,7 @@ public class FFBrowserDockerDemo {
 			System.out.println("Launch FF Browser");
 			//driver.manage().window().maximize();
 			System.out.println("************Launch OHRM Application**************");
+		        Thread.sleep(3000);
 			driver.get("https://opensource-demo.orangehrmlive.com/");
 			Thread.sleep(3000);
 			System.out.println("************Enter User name************");
