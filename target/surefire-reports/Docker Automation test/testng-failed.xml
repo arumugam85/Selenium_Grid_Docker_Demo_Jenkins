@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Docker Automation test]" parallel="tests">
+  <test thread-count="2" verbose="0" name="chrome test(failed)" parallel="tests">
+    <classes>
+      <class name="AWSDocker.ChromeBrowserDockerDemo">
+        <methods>
+          <include name="firstTest"/>
+        </methods>
+      </class> <!-- AWSDocker.ChromeBrowserDockerDemo -->
+    </classes>
+  </test> <!-- chrome test(failed) -->
+  <test thread-count="2" verbose="0" name="firefox Test(failed)" parallel="tests">
+    <classes>
+      <class name="AWSDocker.FFBrowserDockerDemo">
+        <methods>
+          <include name="firstTest"/>
+        </methods>
+      </class> <!-- AWSDocker.FFBrowserDockerDemo -->
+    </classes>
+  </test> <!-- firefox Test(failed) -->
+</suite> <!-- Failed suite [Docker Automation test] -->

@@ -4,35 +4,42 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class ChromeBrowserDockerDemo {
-	
-	private RemoteWebDriver driver;
-	
+
+	static RemoteWebDriver driver;
+
 	@Test
 	public void firstTest() throws InterruptedException, MalformedURLException {
 
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setBrowserName(BrowserType.CHROME);
 		// driver = new ChromeDriver();
-		System.out.println("set remote driver for Chrome");
+		System.out.println("Set remote driver for Chrome");
 		URL url = new URL("http://localhost:4445/wd/hub");
 		try {
 			driver = new RemoteWebDriver(url, cap);
+			System.out.println("Remote driver setup is success for chrome");
 		} catch (Exception e) {
-			System.out.println("remote driver setup failed for chrome");
+			System.out.println("Remote driver setup failed for chrome");
 		}
 		System.out.println("Launch Chrome Browser");
-		//driver.manage().window().maximize();
-		System.out.println("************Chrome Browser Launch OHRM Application**************");
-		driver.get("https://opensource-demo.orangehrmlive.com/");
+		// driver.manage().window().maximize();
+		System.out.println("************Chrome Browser Launch OHRM	 Application**************");
+		try {
+			driver.get("https://opensource-demo.orangehrmlive.com/");
+		} catch (Exception e) {
+			System.out.println("Unable to launch OHRM url");
+		}
 		Thread.sleep(3000);
 		System.out.println("************Enter User name************");
 		driver.findElement(By.id("txtUsername")).sendKeys("Admin");
@@ -52,4 +59,5 @@ public class ChromeBrowserDockerDemo {
 	// driver.quit();
 	// System.out.println("browser closed");
 	// }
+
 }

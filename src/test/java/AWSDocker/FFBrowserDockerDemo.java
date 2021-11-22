@@ -4,34 +4,31 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class FFBrowserDockerDemo {
-	private RemoteWebDriver driver;	
-		@Test
-		public void firstTest() throws InterruptedException, MalformedURLException {
-				
-			//WebDriverManager.firefoxdriver().setup();
-			DesiredCapabilities cap = new DesiredCapabilities();
-			cap.setBrowserName(BrowserType.FIREFOX);
-			// driver = new ChromeDriver();
-			System.out.println("set remote driver for FF");
-			URL url = new URL("http://localhost:4445/wd/hub");
-			try {
-				driver = new RemoteWebDriver(url, cap);
-			} catch (Exception e) {
-				System.out.println("remote driver setup failed for FF");
-			}
+	static RemoteWebDriver driver;	
+	
+	@Test
+	public void firstTest() throws InterruptedException, MalformedURLException {
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setBrowserName(BrowserType.FIREFOX);
+		// driver = new ChromeDriver();
+		System.out.println("Set remote driver for FF");
+		URL url = new URL("http://localhost:4445/wd/hub");
+		try {
+			driver = new RemoteWebDriver(url, cap);
+			System.out.println("Remote driver setup is success for ff");
+		} catch (Exception e) {
+			System.out.println("Remote driver setup failed for ff");
+		}
 
 			System.out.println("Launch FF Browser");
-			driver.manage().window().maximize();
+			//driver.manage().window().maximize();
 			System.out.println("************Launch OHRM Application**************");
 			driver.get("https://opensource-demo.orangehrmlive.com/");
 			Thread.sleep(3000);

@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="AWSDocker.FFBrowserDockerDemo">
+      <class name="AWSDocker.ChromeBrowserDockerDemo">
         <methods>
-          <include name="loginFFTest"/>
+          <include name="setUp"/>
+          <include name="afterTest"/>
+          <include name="simpleTest"/>
         </methods>
-      </class> <!-- AWSDocker.FFBrowserDockerDemo -->
+      </class> <!-- AWSDocker.ChromeBrowserDockerDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

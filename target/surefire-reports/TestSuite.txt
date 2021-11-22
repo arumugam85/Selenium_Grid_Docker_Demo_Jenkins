@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 46.618 s - in TestSuite
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 228.74 s <<< FAILURE! - in TestSuite
+AWSDocker.FFBrowserDockerDemo.firstTest  Time elapsed: 180.787 s  <<< FAILURE!
+java.lang.NullPointerException
+	at AWSDocker.FFBrowserDockerDemo.firstTest(FFBrowserDockerDemo.java:37)
+
+AWSDocker.ChromeBrowserDockerDemo.firstTest  Time elapsed: 182.508 s  <<< FAILURE!
+java.lang.NullPointerException
+	at AWSDocker.ChromeBrowserDockerDemo.firstTest(ChromeBrowserDockerDemo.java:45)
+
